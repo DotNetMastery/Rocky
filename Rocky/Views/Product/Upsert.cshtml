@@ -56,16 +56,18 @@
                     </div>
 
                 </div>
-                @*<div class="form-group row">
+                <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="Description"></label>
+                        <label asp-for="CategoryId"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Description" class="form-control" />
-                        <span asp-validation-for="Description" class="text-danger"></span>
+                        <select asp-for="CategoryId" asp-items="@ViewBag.CategoryDropDown" class="form-control">
+                            <option disabled selected>--Select Category--</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
 
-                </div>*@
+                </div>
                 <div class="form-group row">
                     <div class="col-8 offset-4 row">
 
