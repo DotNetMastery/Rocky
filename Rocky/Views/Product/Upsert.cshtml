@@ -61,7 +61,7 @@
                         <label asp-for="CategoryId"></label>
                     </div>
                     <div class="col-8">
-                        <select asp-for="CategoryId" asp-items="@ViewBag.CategoryDropDown" class="form-control">
+                        <select asp-for="CategoryId" asp-items="@ViewData["CategoryDropDown"] as IEnumerable<SelectListItem>" class="form-control">
                             <option disabled selected>--Select Category--</option>
                         </select>
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
