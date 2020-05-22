@@ -40,7 +40,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="form-group row">
                     <div class="col-4">
                         <label asp-for="CategoryId"></label>
@@ -51,12 +51,21 @@
 
                 </div>
                 <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ApplicationTypeId"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="ApplicationType.Name" disabled class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
                     <div class="col-8 offset-4 row">
 
                         <div class="col">
-                           
-                                <button type="submit" class="btn btn-danger w-100">Delete</button>
-                            
+
+                            <button type="submit" class="btn btn-danger w-100">Delete</button>
+
 
                         </div>
                         <div class="col">
