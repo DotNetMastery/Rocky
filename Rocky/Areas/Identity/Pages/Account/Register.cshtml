@@ -1,10 +1,14 @@
 ﻿@page
 @model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
 
-<h1>@ViewData["Title"]</h1>
+@if (User.IsInRole(Rocky.WC.AdminRole))
+{
+    <h1>Register an Admin Account</h1>
+}
+else
+{
+    <h1>Register</h1>
+}
 
 <div class="row">
     <div class="col-md-4">
@@ -37,7 +41,15 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            @if (User.IsInRole(Rocky.WC.AdminRole))
+            {
+                <button type="submit" class="btn btn-warning">Register Admin User</button>
+            }
+            else
+            {
+                <button type="submit" class="btn btn-primary">Register</button>
+            }
+
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
