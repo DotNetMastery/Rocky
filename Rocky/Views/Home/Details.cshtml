@@ -1,0 +1,60 @@
+﻿@model Rocky.Models.ViewModels.DetailsVM
+
+<div class="">
+    <form method="post">
+
+        <div class="container backgroundWhite pt-4">
+            <div class="card" style="border:1px solid #000000; ">
+                <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-white">@Model.Product.Name</h1>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-right">
+                        <h1 class="text-warning"> @((Model.Product.Price).ToString("c"))</h1>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container rounded p-2">
+                        <div class="row">
+                            <div class="col-12 col-lg-4 p-1 text-center">
+                                <img src="@WC.ImagePath@Model.Product.Image" width="100%" class="rounded" />
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <div class="row pl-3">
+
+                                    <div class="col-12">
+                                        <span class="badge p-3 border" style="background-color:lavenderblush">@Model.Product.Category.Name</span>
+                                        <span class="badge p-3 border" style="background-color:azure">@Model.Product.ApplicationType.Name</span>
+                                        <h3 class="text-success"></h3>
+
+                                        <p class="text-secondary">@Html.Raw(Model.Product.Description) </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-dark">
+                    <div class="row">
+                        <div class="col-12 col-md-6 pb-1 ">
+                            <a asp-action="Index" class="btn btn-success btn-square form-control btn-lg" style="height:50px;">Back to List</a>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            @if (Model.ExistsInCart)
+                            {
+                                <a asp-action="RemoveFromCart" asp-route-id="@Model.Product.Id" class="btn btn-warning btn-square form-control btn-lg" style="height:50px;">Remove from Cart</a>
+                            }
+                            else
+                            {
+
+
+                            <button type="submit" class="btn btn-info form-control btn-lg" style="height:50px;">Add to Cart</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

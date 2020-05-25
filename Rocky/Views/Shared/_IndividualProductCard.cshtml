@@ -5,7 +5,7 @@
         <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
             <div class="card-body px-3 pt-3 pb-1 row">
                 <div class="col-7"><label class="float-left">@Model.Name</label></div>
-                <div class="col-5"><label class="float-right"><span class="text-info h5">@Model.Price</span> / sqft</label> </div>
+                <div class="col-5"><label class="float-right"><span class="text-info h5">@string.Format("{0:c0}",Model.Price)</span> / sqft</label> </div>
             </div>
             <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@WC.ImagePath@Model.Image" alt="Card image cap">
             <div class="card-body p-1 px-3 row">
