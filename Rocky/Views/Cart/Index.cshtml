@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<Product>
 
+@if (Model.Count() > 0)
+{
+
+
     <form method="post">
         <br />
         <div class="backgroundWhiteBorder">
@@ -47,7 +51,7 @@
 
                                 </div>
                                 <div class="col-2 col-lg-1 p-0 pt-lg-4 text-center">
-                                    <a class="btn btn-outline-danger">
+                                    <a asp-action="Remove" asp-route-id="@obj.Id" class="btn btn-outline-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
@@ -69,4 +73,8 @@
             </div>
         </div>
     </form>
-
+}
+else
+{
+    <p>Please add items to cart.</p>
+}
