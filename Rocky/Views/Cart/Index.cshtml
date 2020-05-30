@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Product>
+
+    <form method="post">
+        <br />
+        <div class="backgroundWhiteBorder">
+            <div class="container row">
+                <div class="col -8">
+                    <div class="card mt-4">
+                        <div class="card-header bg-dark text-light ml-0 row container">
+                            <div class="col-6">
+                                <i class="fa fa-shopping-cart"></i> &nbsp;
+                                Shopping Cart
+                            </div>
+                            <div class="col-6 text-right">
+                                <a asp-action="Index" asp-controller="Home" class="btn btn-outline-info btn-sm">Continue Shopping</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class=" d-none d-lg-block">
+                                <div class="row" style="color:#821f3d">
+                                    <div class="col-lg-2">
+                                    </div>
+                                    <div class="col-12 col-lg-7">
+                                        Product Details
+                                    </div>
+                                    <div class="col-12 col-lg-2">
+                                        Price per sqft
+                                    </div>
+                                    <div class="col-6 col-sm-4 col-lg-1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+                            @foreach (var obj in Model)
+                            {
+                            <div class="row h-100">
+                                <div class="col-4 col-md-2 text-center py-2">
+                                    <img src="@WC.ImagePath@obj.Image" class="rounded" width="100%" />
+                                </div>
+                                <div class="col-8 col-lg-7">
+                                    <h5>@obj.Name</h5>
+                                    <div style="font-size:11px;">@obj.ShortDesc</div>
+                                </div>
+                                <div class="col-3 col-lg-2 pt-lg-4" style="font-size:11px;">
+                                    <span style="font-size:17px;"> $@obj.Price</span>/ sqft
+
+                                </div>
+                                <div class="col-2 col-lg-1 p-0 pt-lg-4 text-center">
+                                    <a class="btn btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr />
+                            }
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6 col-md-3 offset-md-9">
+                                    <button type="submit" class="btn btn-success form-control ">
+                                        <span>Continue</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
