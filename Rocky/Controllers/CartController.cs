@@ -77,6 +77,20 @@ namespace Rocky.Controllers
             return View(ProductUserVM);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Summary")]
+        public IActionResult SummaryPost(ProductUserVM ProductUserVM)
+        {
+            
+            return RedirectToAction(nameof(InquiryConfirmation));
+        }
+        public IActionResult InquiryConfirmation()
+        {
+            HttpContext.Session.Clear();
+            return View();
+        }
+
         public IActionResult Remove(int id)
         {
 

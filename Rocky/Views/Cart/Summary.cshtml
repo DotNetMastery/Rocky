@@ -59,12 +59,14 @@
                                     <ul class="list-group mb-3">
                                         @foreach (var obj in Model.ProductList)
                                         {
-                                        <li class="list-group-item d-flex justify-content-between">
-                                            <div>
-                                                <h6 class="my-0">@obj.Name</h6>
-                                                <small class="text-muted">Price per Sqft: $@obj.Price</small>
-                                            </div>
-                                        </li>
+                                            <input type="hidden" asp-for="@obj.Name" />
+                                            <input type="hidden" asp-for="@obj.Id" />
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>
+                                                    <h6 class="my-0">@obj.Name</h6>
+                                                    <small class="text-muted">Price per Sqft: $@obj.Price</small>
+                                                </div>
+                                            </li>
                                         }
                                     </ul>
                                 </div>
