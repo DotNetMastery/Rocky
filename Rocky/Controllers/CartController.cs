@@ -70,7 +70,7 @@ namespace Rocky.Controllers
             ProductUserVM = new ProductUserVM()
             {
                 ApplicationUser = _db.ApplicationUser.FirstOrDefault(u => u.Id == claim.Value),
-                ProductList = prodList
+                ProductList = prodList.ToList()
             };
 
 
