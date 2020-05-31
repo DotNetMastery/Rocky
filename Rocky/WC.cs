@@ -12,5 +12,8 @@ namespace Rocky
 
         public static string AdminRole = "Admin";
         public static string CustomerRole = "Customer";
+
+        public static string EmailAdmin = "ben.spark90@yahoo.com";
+
     }
 }
